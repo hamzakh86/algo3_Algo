@@ -1,0 +1,17 @@
+ALGORITHM insertion_sort
+VAR
+    arr: ARRAY_OF INTEGER[10];   // Declare an array of 10 integers
+    i, j, temp: INTEGER;         // Declare integer variables i, j, and temp
+BEGIN
+    FOR i FROM 1 TO arr.length-1 STEP 1 DO
+        temp := arr[i];           // Store the current element in temp
+        j := i - 1;
+
+        WHILE j >= 0 AND arr[j] > temp DO
+            arr[j + 1] := arr[j];  // Shift elements to the right
+            j := j - 1;
+        END_WHILE
+
+        arr[j + 1] := temp;       // Insert the current element in the correct position
+    END_FOR
+END
